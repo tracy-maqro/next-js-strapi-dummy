@@ -7,7 +7,7 @@ import Panels from '../../blocks/Panels'
 import { useRouter } from 'next/dist/client/router';
 
 
-const getBlockComponent = ({ __component, ...rest }, index) => {
+const getBlockComponent = ({ __component, _id, ...rest }) => {
   let Block;
   switch (__component) {
     case 'sections.hero':
@@ -33,7 +33,7 @@ const getBlockComponent = ({ __component, ...rest }, index) => {
       break;
   }
 
-  return Block ? <Block key={index} {...rest} /> : null;
+  return Block ? <Block key={_id} {...rest} /> : null;
 };
 
 const BlockManager = ({ blocks }) => {
@@ -44,7 +44,7 @@ const BlockManager = ({ blocks }) => {
         router.asPath === '/' ? 'home-page-wrap' : 'page-wrap'
       }`}
     >
-      {blocks.Blocks.map((block, index) => getBlockComponent(block, index))}
+      {blocks.Blocks.map((block) => getBlockComponent(block))}
     </div>
   );
 };

@@ -4,7 +4,6 @@ import styles from '../styles/Home.module.css';
 import BlockManager from '../components/shared/BlockManager';
 
 export default function Home({ pages }) {
-  console.log(pages);
   return (
     <div>
       {pages &&
