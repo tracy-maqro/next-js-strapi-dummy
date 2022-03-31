@@ -15,7 +15,7 @@ export default function Home({ pages }) {
         />
       </Head>
       <div>
-        Test
+        Test Test
         {pages &&
           pages.map((page, index) => (
             <BlockManager blocks={page} key={index} />
