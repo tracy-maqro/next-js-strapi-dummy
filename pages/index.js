@@ -5,10 +5,23 @@ import BlockManager from '../components/shared/BlockManager';
 
 export default function Home({ pages }) {
   return (
-    <div>
-      {pages &&
-        pages.map((page, index) => <BlockManager blocks={page} key={index} />)}
-    </div>
+    <>
+      <Head>
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+        <link
+          href='https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Roboto:wght@100&display=swap'
+          rel='stylesheet'
+        />
+      </Head>
+      <div>
+        Test
+        {pages &&
+          pages.map((page, index) => (
+            <BlockManager blocks={page} key={index} />
+          ))}
+      </div>
+    </>
   );
 }
 
